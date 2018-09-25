@@ -8268,9 +8268,9 @@ var _user$project$OnInput$laFabrique = function (model) {
 				if (_p2.ctor === 'Nothing') {
 					return _elm_lang$html$Html$text('');
 				} else {
-					var _p6 = _p2._0;
+					var _p8 = _p2._0;
 					if (_elm_lang$core$Native_Utils.eq(
-						_user$project$OnInput$versString(_p6),
+						_user$project$OnInput$versString(_p8),
 						'-')) {
 						var _p3 = {ctor: '_Tuple2', _0: i1, _1: i2};
 						if ((_p3._0.ctor === 'Just') && (_p3._1.ctor === 'Just')) {
@@ -8281,7 +8281,7 @@ var _user$project$OnInput$laFabrique = function (model) {
 						}
 					} else {
 						if (_elm_lang$core$Native_Utils.eq(
-							_user$project$OnInput$versString(_p6),
+							_user$project$OnInput$versString(_p8),
 							'*')) {
 							var _p4 = {ctor: '_Tuple2', _0: i1, _1: i2};
 							if ((_p4._0.ctor === 'Just') && (_p4._1.ctor === 'Just')) {
@@ -8291,12 +8291,37 @@ var _user$project$OnInput$laFabrique = function (model) {
 								return _elm_lang$html$Html$text('');
 							}
 						} else {
-							var _p5 = {ctor: '_Tuple2', _0: i1, _1: i2};
-							if ((_p5._0.ctor === 'Just') && (_p5._1.ctor === 'Just')) {
-								return _elm_lang$html$Html$text(
-									_elm_lang$core$Basics$toString(_p5._0._0 + _p5._1._0));
+							if (_elm_lang$core$Native_Utils.eq(
+								_user$project$OnInput$versString(_p8),
+								'+')) {
+								var _p5 = {ctor: '_Tuple2', _0: i1, _1: i2};
+								if ((_p5._0.ctor === 'Just') && (_p5._1.ctor === 'Just')) {
+									return _elm_lang$html$Html$text(
+										_elm_lang$core$Basics$toString(_p5._0._0 + _p5._1._0));
+								} else {
+									return _elm_lang$html$Html$text('');
+								}
 							} else {
-								return _elm_lang$html$Html$text('');
+								if (_elm_lang$core$Native_Utils.eq(
+									_user$project$OnInput$versString(_p8),
+									'/')) {
+									var _p6 = {ctor: '_Tuple2', _0: i1, _1: i2};
+									if ((_p6._0.ctor === 'Just') && (_p6._1.ctor === 'Just')) {
+										return _elm_lang$html$Html$text(
+											_elm_lang$core$Basics$toString(_p6._0._0 / _p6._1._0));
+									} else {
+										return _elm_lang$html$Html$text('');
+									}
+								} else {
+									var _p7 = {ctor: '_Tuple2', _0: i1, _1: i2};
+									if ((_p7._0.ctor === 'Just') && (_p7._1.ctor === 'Just')) {
+										return _elm_lang$html$Html$text(
+											_elm_lang$core$Basics$toString(
+												Math.pow(_p7._0._0, _p7._1._0)));
+									} else {
+										return _elm_lang$html$Html$text('');
+									}
+								}
 							}
 						}
 					}
@@ -8311,42 +8336,42 @@ var _user$project$OnInput$Model = F3(
 	});
 var _user$project$OnInput$init = A3(_user$project$OnInput$Model, _elm_lang$core$Maybe$Nothing, _elm_lang$core$Maybe$Nothing, _elm_lang$core$Maybe$Nothing);
 var _user$project$OnInput$update = F2(
-	function (msg, _p7) {
-		var _p8 = _p7;
-		var _p12 = _p8.string;
-		var _p11 = _p8.int2;
-		var _p10 = _p8.int1;
-		var _p9 = msg;
-		switch (_p9.ctor) {
+	function (msg, _p9) {
+		var _p10 = _p9;
+		var _p14 = _p10.string;
+		var _p13 = _p10.int2;
+		var _p12 = _p10.int1;
+		var _p11 = msg;
+		switch (_p11.ctor) {
 			case 'I1':
-				if (_p9._0.ctor === 'Ok') {
+				if (_p11._0.ctor === 'Ok') {
 					return A3(
 						_user$project$OnInput$Model,
-						_elm_lang$core$Maybe$Just(_p9._0._0),
-						_p11,
-						_p12);
+						_elm_lang$core$Maybe$Just(_p11._0._0),
+						_p13,
+						_p14);
 				} else {
-					return A3(_user$project$OnInput$Model, _elm_lang$core$Maybe$Nothing, _p11, _p12);
+					return A3(_user$project$OnInput$Model, _elm_lang$core$Maybe$Nothing, _p13, _p14);
 				}
 			case 'I2':
-				if (_p9._0.ctor === 'Ok') {
+				if (_p11._0.ctor === 'Ok') {
 					return A3(
 						_user$project$OnInput$Model,
-						_p10,
-						_elm_lang$core$Maybe$Just(_p9._0._0),
-						_p12);
+						_p12,
+						_elm_lang$core$Maybe$Just(_p11._0._0),
+						_p14);
 				} else {
-					return A3(_user$project$OnInput$Model, _p10, _elm_lang$core$Maybe$Nothing, _p12);
+					return A3(_user$project$OnInput$Model, _p12, _elm_lang$core$Maybe$Nothing, _p14);
 				}
 			default:
-				if (_p9._0.ctor === 'Ok') {
+				if (_p11._0.ctor === 'Ok') {
 					return A3(
 						_user$project$OnInput$Model,
-						_p10,
-						_p11,
-						_elm_lang$core$Maybe$Just(_p9._0._0));
+						_p12,
+						_p13,
+						_elm_lang$core$Maybe$Just(_p11._0._0));
 				} else {
-					return A3(_user$project$OnInput$Model, _p10, _p11, _elm_lang$core$Maybe$Nothing);
+					return A3(_user$project$OnInput$Model, _p12, _p13, _elm_lang$core$Maybe$Nothing);
 				}
 		}
 	});
@@ -8363,14 +8388,14 @@ var _user$project$OnInput$C = function (a) {
 	return {ctor: 'C', _0: a};
 };
 var _user$project$OnInput$newOpe = function (ope) {
-	return (_elm_lang$core$Native_Utils.eq(ope, '+') || (_elm_lang$core$Native_Utils.eq(ope, '-') || _elm_lang$core$Native_Utils.eq(ope, '*'))) ? _elm_lang$core$Maybe$Just(
+	return (_elm_lang$core$Native_Utils.eq(ope, '+') || (_elm_lang$core$Native_Utils.eq(ope, '-') || (_elm_lang$core$Native_Utils.eq(ope, '*') || (_elm_lang$core$Native_Utils.eq(ope, '/') || _elm_lang$core$Native_Utils.eq(ope, '^'))))) ? _elm_lang$core$Maybe$Just(
 		_user$project$OnInput$C(ope)) : _elm_lang$core$Maybe$Nothing;
 };
 var _user$project$OnInput$stringVersOpe = function (s) {
 	var s2 = _user$project$OnInput$newOpe(s);
-	var _p13 = s2;
-	if (_p13.ctor === 'Just') {
-		return _elm_lang$core$Result$Ok(_p13._0);
+	var _p15 = s2;
+	if (_p15.ctor === 'Just') {
+		return _elm_lang$core$Result$Ok(_p15._0);
 	} else {
 		return _elm_lang$core$Result$Err('bouh');
 	}
@@ -8392,9 +8417,9 @@ var _user$project$OnInput$view = function (model) {
 						_1: {
 							ctor: '::',
 							_0: _elm_lang$html$Html_Events$onInput(
-								function (_p14) {
+								function (_p16) {
 									return _user$project$OnInput$I1(
-										_elm_lang$core$String$toFloat(_p14));
+										_elm_lang$core$String$toFloat(_p16));
 								}),
 							_1: {ctor: '[]'}
 						}
@@ -8414,9 +8439,9 @@ var _user$project$OnInput$view = function (model) {
 							_1: {
 								ctor: '::',
 								_0: _elm_lang$html$Html_Events$onInput(
-									function (_p15) {
+									function (_p17) {
 										return _user$project$OnInput$S(
-											_user$project$OnInput$stringVersOpe(_p15));
+											_user$project$OnInput$stringVersOpe(_p17));
 									}),
 								_1: {ctor: '[]'}
 							}
@@ -8436,9 +8461,9 @@ var _user$project$OnInput$view = function (model) {
 								_1: {
 									ctor: '::',
 									_0: _elm_lang$html$Html_Events$onInput(
-										function (_p16) {
+										function (_p18) {
 											return _user$project$OnInput$I2(
-												_elm_lang$core$String$toFloat(_p16));
+												_elm_lang$core$String$toFloat(_p18));
 										}),
 									_1: {ctor: '[]'}
 								}
